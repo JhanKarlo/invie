@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Invie - tus mejores guitarras!!</title>
         <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet"> 
         <link rel="stylesheet" href="css/invie.css">
+        <!--<link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css">-->
     </head>
     <body>
         <section id="portada" class="portada background"> <!-- portada -->
@@ -14,7 +15,8 @@
                 <figure class="logotipo"> <!-- logotipo -->
                     <img src="images/invie.png" width="186" height="60" alt="Invie - logotipo">
                 </figure>
-                <nav class="menu"> <!-- menu -->
+                <span class="burguer-button icon-menu" id="burguer-button"></span>
+                <nav class="menu" id="menu"> <!-- menu -->
                     <ul>
                         <li>
                             <a href="index.html">Home</a>
@@ -88,7 +90,7 @@
                                 <input type="checkbox" id="reclamos" name="intereses" value="reclamos">Reclamos
                             </label>
                             <label for="comentarios">
-                                <input type="checkbox" id="comentarios" name="intereses" value="comentarios">Comentarios
+                                <input type="checkbox" id="comentario" name="intereses" value="comentarios">Comentarios
                             </label>
                             <label for="otros">
                                 <input type="checkbox" id="otros" name="intereses" value="otros">Otros
@@ -103,5 +105,15 @@
                 </form>
             </div>
         </footer>
+
+        <script>
+            var $burguerButton = document.getElementById('burguer-button');
+            var $menu = document.getElementById('menu');
+            $burguerButton.addEventListener('touchstart', toogleMenu);
+
+            function toogleMenu(){
+                $menu.classList.toggle('active');
+            };
+        </script>
     </body>
 </html>
