@@ -78,7 +78,7 @@ input:focus, textarea:focus {
 }
 
 .background {
-    background-image: url("../images/background.png");
+    background: #466173 url("../images/background.png");
     background-size: cover;
 }
 
@@ -274,7 +274,6 @@ footer .contenedor {
     line-height: 40px;
     border-radius: 50%;
     background: #395667;
-    display: inline-block;
     text-align: center;
     position: fixed;
     left: 0;
@@ -282,9 +281,45 @@ footer .contenedor {
     cursor: pointer;
     left: 20px;
     top: 20px;
-    z-index:3
+    z-index:3;
+    color: white;
+    display: none;
 }
+
+.video-demo {
+    max-width: 500px;
+    width: 100%;
+    border: 5px solid #3c5b6e;
+}
+
+
+.video-demo-contenedor{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
 @media screen and (max-width: 800px){
+    /*PRECIOS*/
+    .tabla {
+        margin: 50px 20px;
+        border: 1px solid #273b47;
+    }
+    .tabla .contenedor {
+        overflow: auto;
+    }
+
+    .tabla .contenedor::-webkit-scrollbar
+    {
+        height: 7px;
+    }
+    .tabla .contenedor::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background: #273b47;
+    }
+    /*PRECIOS*/
+
     /*PORTADA*/
 
     .titulo {
@@ -304,6 +339,10 @@ footer .contenedor {
     /*PORTADA*/
 
     /*GUITARRAS*/
+    .video-demo-contenedor {
+        margin-bottom: 30px;
+    }
+
     .guitarras {
         text-align: center;
     }
@@ -332,6 +371,7 @@ footer .contenedor {
         position: static;
         margin: 0;
     }
+
     /*GUITARRAS*/
 }
 
@@ -379,6 +419,13 @@ footer .contenedor {
 
 
     /*footer*/
+
+    /*GUITARRAS*/
+
+    /*.video-demo {*/
+        /*margin: 0 10px;*/
+    /*}*/
+    /*GUITARRAS*/
 }
 
 @media screen and (max-width: 650px) {
@@ -407,7 +454,26 @@ footer .contenedor {
 
 @media screen and (max-width: 500px) {
     /*portada*/
+    .portada .button {
+        display: block;
+    }
+
+    .precios .header .logotipo {
+        margin: 50px 0;
+    }
+
+    .burguer-button {
+        display: inline-block;
+    }
     .portada .contenedor{
+        position: static;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header .contenedor {
         position: static;
     }
 
@@ -473,6 +539,41 @@ footer .contenedor {
     .title-b {
         font-size: 30px;
     }
+    .video-demo-contenedor {
+        margin: 0 10px 30px 10px;
+    }
     /*guitarras*/
 
+    /*footer*/
+
+    .formulario .col2 {
+        align-items: stretch;
+    }
+
+    /*footer*/
+}
+
+video {
+    width: 100%;
+}
+
+.video-responsive-contenedor {
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.video-responsive-src {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2),(min--moz-device-pixel-ratio: 2) {
+    .background {
+        background-image: url("../images/background2x.png");
+    }
 }
